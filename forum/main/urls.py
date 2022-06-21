@@ -4,6 +4,6 @@ from .views import detail, home, posts
 
 urlpatterns = [
     path('', home, name='home'),
-    path('detail/', detail, name='detail'),
-    path('posts/', posts, name='post'),
+    path('detail/<slug>/', detail, name='detail'),
+    path('posts/<slug>/', posts, name='post'),
 ]

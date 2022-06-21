@@ -9,6 +9,7 @@ django-resized = "*"
 django-tinymce = "*"
 django-hitcount = "*"
 django-taggit = "*"
+pillow = "*"
 
 [dev-packages]
 
