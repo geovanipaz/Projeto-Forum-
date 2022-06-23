@@ -10,6 +10,7 @@ django-tinymce = "*"
 django-hitcount = "*"
 django-taggit = "*"
 pillow = "*"
+django-crispy-forms = "*"
 
 [dev-packages]
 
