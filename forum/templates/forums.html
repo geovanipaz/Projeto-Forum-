@@ -41,9 +41,11 @@
             Meu Form Stats &nbsp;<i class="fa fa-bar-chart"></i>
         </div>
         <div>
-            <span> <u>5,111</u> Post in <u>12,33</u> Topics by <u>45666</u> Users</span><br>
-            <span>Ultimos Posts <b><a href=""> Posts Gerais </a></b> em 15 de Dez 2022 
-            by <a href="">Usuarios Gerais</a></span>
+            <span>Último post: <b><a href="{{last_post.get_url}}">
+                {{last_post.title}}</a></b> em {{last_post.date|date}} 
+                Por <a href="">{{last_post.user.fullname|title}}</a></span>.<br>
+            <span>Check <a href="{% url 'latest_posts' %}"
+                >the latest posts</a> .</span><br>
         </div>
     </div>
     
