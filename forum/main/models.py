@@ -97,7 +97,8 @@ class Post(models.Model):
                                         related_query_name='hit_count_generic_relation')
     tags = TaggableManager()
     comments = models.ManyToManyField(Comment, blank=True)
-    
+    closed = models.BooleanField(default=False)
+    state = models.CharField(max_length=40, default='zero')
     
     def save(self, *args, **kwargs):
         if not self.slug:

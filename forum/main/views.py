@@ -1,4 +1,4 @@
-from multiprocessing import context
+
 from unicodedata import category
 from django.shortcuts import redirect, render, get_object_or_404
 from .models import Category, Post, Author, Comment, Reply
@@ -27,7 +27,8 @@ def home(request):
 
 def detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    author = Author.objects.get(user=request.user)
+    if request.user.is_authenticated:
+        author = Author.objects.get(user=request.user)
     if 'comment-form' in request.POST:
         comment = request.POST.get('comment')
         new_comment, created = Comment.objects.get_or_create(
@@ -92,3 +93,7 @@ def latest_posts(request):
     }
     
     return render(request, 'latest-posts.html', context)
+
+def search_result(request):
+    
+    return render(request, 'search.html')
